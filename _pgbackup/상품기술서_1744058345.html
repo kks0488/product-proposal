@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Marktrade 홈쇼핑 방송 제안 상품 기술서 - 플리스 셋업</title>
+        <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap">
+        <style>/* 색상 변수 정의 - 4가지 색상으로 제한 */:root { --primary: #1a365d;  /* 딥 네이비 - 신뢰감 */ --secondary: #4a5568;  /* 중립 그레이 - 텍스트 */ --background: #f8fafc;  /* 오프화이트 - 배경 */ --accent: #0ea5e9;  /* 테일 블루 - 강조 */ --primary-light: #2c5282;  /* 밝은 네이비 */ --accent-light: #e0f2fe;  /* 연한 테일 블루 */ --secondary-light: #cbd5e0;  /* 밝은 그레이 */ --shadow: rgba(0,0,0,0.08);  /* 그림자 색상 */ } body { font-family: 'Noto Sans KR', sans-serif; color: var(--secondary); background-color: var(--background); line-height: 1.7; } .container { max-width: 1000px; margin: 0 auto; padding: 2rem; } .card { background-color: white; border-radius: 0.75rem; box-shadow: 0 4px 12px var(--shadow); margin-bottom: 2.5rem; overflow: hidden; border: 1px solid rgba(203, 213, 224, 0.5); transition: transform 0.2s ease-in-out; } .card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px var(--shadow); } .card-header { padding: 1.75rem 2rem; border-bottom: 1px solid rgba(203, 213, 224, 0.5); background-color: white; border-radius: 0.75rem 0.75rem 0 0; } .card-body { padding: 2.5rem; background: linear-gradient(to bottom, white, var(--background)); } h1.main-title { font-size: 2.2rem; color: var(--primary); font-weight: 700; margin-bottom: 0.75rem; text-align: center; } h2 { font-size: 1.6rem; color: var(--primary); margin-bottom: 1.5rem; font-weight: 600; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent-light); display: flex; align-items: center; } h3 { font-size: 1.25rem; color: var(--primary-light); margin-top: 1.75rem; margin-bottom: 1rem; font-weight: 600; padding-left: 0.75rem; border-left: 4px solid var(--accent); } h3:first-child { margin-top: 0; } h4 { font-size: 1.05rem; color: var(--primary); margin-top: 1.25rem; margin-bottom: 0.75rem; font-weight: 600; } p, li, dt, dd { font-size: 0.95rem; color: var(--secondary); margin-bottom: 0.75rem; } ul { list-style: none; padding-left: 0; } .badge { display: inline-block; padding: 0.25rem 0.75rem; font-size: 0.8rem; font-weight: 600; border-radius: 9999px; background-color: var(--accent-light); color: var(--accent); margin-left: 0.75rem; } .highlight { font-weight: 600; color: var(--primary-light); background-color: var(--accent-light); padding: 0.1rem 0.4rem; border-radius: 0.25rem; } .emphasis { font-weight: 700; color: var(--primary); } .strong-emphasis { font-weight: 700; color: var(--accent); } .section-list { list-style-type: none; padding-left: 0.25rem; margin-top: 0.75rem; space-y: 0.8rem; } .section-list li { position: relative; padding-left: 1.7rem; font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; } .section-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent); font-weight: bold; top: 4px; font-size: 1.1em; } .image-placeholder { display: block; width: 100%; min-height: 200px; background-color: white; border: 1px dashed var(--secondary-light); border-radius: 0.75rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--secondary); font-size: 0.9rem; font-weight: 500; margin: 1.5rem 0; text-align: center; padding: 1.5rem; transition: all 0.2s ease; } .image-placeholder:hover { background-color: var(--accent-light); border-color: var(--accent); } .key-point { background-color: white; border-left: 4px solid var(--accent); padding: 1.75rem; margin: 2rem 0; border-radius: 0.5rem; box-shadow: 0 2px 8px var(--shadow); } .key-point h4 { margin-top: 0; margin-bottom: 0.75rem; color: var(--primary); font-size: 1.1rem; font-weight: 600; border: none; padding: 0; } .key-point p, .key-point li { font-size: 0.95rem; color: var(--secondary); margin-bottom: 0.5rem; } .key-point ul { list-style: disc; padding-left: 1.25rem; margin-top: 0.5rem; } .info-table { width: 100%; border-collapse: collapse; margin-top: 1rem; box-shadow: 0 1px 3px var(--shadow); border-radius: 0.5rem; overflow: hidden; } .info-table th, .info-table td { border: 1px solid var(--secondary-light); padding: 1rem 1.25rem; text-align: left; font-size: 0.95rem; } .info-table th { background-color: var(--accent-light); font-weight: 600; color: var(--primary); width: 25%; } .info-table td { color: var(--secondary); background-color: white; } .snap-zipper-highlight { background-color: white; border: 1px solid var(--accent); border-left-width: 4px; padding: 1.5rem; border-radius: 0.5rem; margin-top: 1.5rem; box-shadow: 0 2px 8px var(--shadow); } .snap-zipper-highlight h5 { font-weight: 700; color: var(--primary); font-size: 1.1em; margin-bottom: 0.75rem; } .snap-zipper-highlight p { color: var(--secondary); font-size: 0.95rem; } /* 새로운 스타일 추가 */.flex-row { display: flex; flex-direction: row; align-items: center; } .flex-col { display: flex; flex-direction: column; } .dl-row { display: flex; justify-content: space-between; padding: 0.75rem 0; border-bottom: 1px solid var(--secondary-light); } .dl-row:last-child { border-bottom: none; } .dl-row dt { font-weight: 500; color: var(--primary); width: 30%; } .dl-row dd { text-align: right; width: 70%; } .price-tag { color: var(--accent); font-weight: bold; font-size: 1.25rem; } .small-text { font-size: 0.85rem; color: var(--secondary); font-weight: normal; } .icon-list li { position: relative; padding-left: 2rem; margin-bottom: 1rem; } .icon-list li .icon { position: absolute; left: 0; top: 0.2rem; color: var(--accent); font-size: 1.2rem; }</style>
+    </head>
+    <body style="background-color: var(--background);">
+        <div class="container">
+            <header class="text-center py-6 mb-8">
+                <h1 class="main-title">홈쇼핑 방송 제안 상품 기술서</h1>
+                <p class="text-lg mt-2" style="color: var(--primary-light);">[앵콜/업그레이드] 고객 극찬! 데일리 플리스 집업 &amp; 조거 팬츠 SET</p>
+            </header>
+            <div class="card">
+                <div class="card-header">
+                    <h2>1. 상품 개요 <span class="badge">Product Overview</span></h2>
+                </div>
+                <div class="card-body">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
+                        <div>
+                            <h3 class="text-base font-semibold mb-3">기본 정보</h3>
+                            <dl>
+                                <div class="dl-row">
+                                    <dt>제 안 상 품 명</dt>
+                                    <dd>[앵콜/업그레이드]고객 극찬!&nbsp;
+                                        <p>데일리 플리스 집업 &amp; 조거 팬츠 SET</p>
+                                    </dd>
+                                </div>
+                                <div class="dl-row">
+                                    <dt>제 안 사</dt>
+                                    <dd>주식회사 마크트레이드
+                                        <p>(벤더 지앤원 박지용 대표 / 010-5308-8172)</p>
+                                    </dd>
+                                </div>
+                                <div class="dl-row">
+                                    <dt>구 성</dt>
+                                    <dd>
+                                        <span class="highlight">플리스 집업 상의 1종 + 조거 팬츠 하의 1종 (총 2종 SET)</span>
+                                    </dd>
+                                </div>
+                                <div class="dl-row">
+                                    <dt>제 안 가 격</dt>
+                                    <dd>
+                                        <span class="price-tag">59,000원</span> <span class="small-text">(SET 가격 / VAT 포함)</span>
+                                    </dd>
+                                </div>
+                                <div class="dl-row">
+                                    <dt>핵 심 컨 셉</dt>
+                                    <dd class="text-right">겨울철 필수템 &apos;플리스&apos;를<br>
+                                        <span style="color: var(--secondary); font-size: 0.95rem;">가장 편안하고 스타일리시하게!</span>
+                                        <div>원마일웨어 &amp; 데일리웨어 끝판왕
+</div>
+                                    </dd>
+                                </div>
+                                <div class="dl-row">
+                                    <dt>브 랜 드</dt>
+                                    <dd class="text-right">
+                                        <b>모두스비벤디 / DOHC</b>
+                                        <div></div>
+                                    </dd>
+                                </div>
+                                <div class="dl-row">
+                                    <dt>소 재</dt>
+                                    <dd class="text-right">폴리에스테르 플리스 360 gsm</dd>
+                                </div>
+                            </dl>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-semibold mb-3">핵심 포인트 <span class="emphasis">(필독!)</span></h3>
+                            <ul class="icon-list">
+                                <li>
+                                    <span class="icon">🔥</span>
+                                    <strong class="strong-emphasis">2024년 성공적 판매 검증 완료!</strong>
+                                    <div>자사몰 4주 연속 판매 1위 / 2차 완판 (1만 5천세트)</div>
+                                </li>
+                                <li>
+                                    <span class="icon">🔥</span>
+                                    <strong class="strong-emphasis">실구매 고객 만족도 최상!</strong>
+                                    <div>(평점 4.7점 / 리뷰 600건 이상 - 네이버+쿠팡만)</div>
+                                </li>
+                                <li>
+                                    <span class="icon">🔥</span>
+                                    <strong class="strong-emphasis">2025년형 업그레이드:</strong>
+                                    <div>고객 피드백과 최신 트렌드 반영 디자인/디테일 개선!
+</div>
+                                </li>
+                            </ul>
+                            <div class="image-placeholder mt-4">
+                                <img src="http://ofactory.cafe24.com/company/offer/img/main.jpeg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image-placeholder">상품 대표 이미지 (모델 착용 컷 - 남/여)
+                        <img src="http://ofactory.cafe24.com/company/offer/img/coupleset.png" width="600">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2>2. 상품 소구 포인트 <span class="badge">Key Selling Points (for Broadcast)</span></h2>
+                </div>
+                <div class="card-body">
+                    <div class="key-point">
+                        <h4>⭐ [가장 강력한 소구점] 이미 검증된 상품성 & 고객 만족도!</h4>
+                        <ul class="section-list">
+                            <li>
+                                <strong class="emphasis">MD님의 리스크 최소화!</strong> 2024년 실제 판매 데이터로 성공 가능성 입증!
+                            </li>
+                            <li>
+                                <strong class="highlight">"믿고 사는 아이템":</strong> 수많은 고객 리뷰가 보증하는 품질 (<span class="underline">방송 중 실제 리뷰 인용 가능</span>)
+                            </li>
+                            <li>
+                                <strong class="highlight">업그레이드 포인트:</strong> 작년 구매 고객도 다시 구매하고 싶게 만족도 UP! (디자인/디테일 개선)
+                            </li>
+                        </ul>
+                        <div class="image-placeholder mt-3">고객 우수 리뷰 모음
+                            <img src="http://ofactory.cafe24.com/company/offer/img/review1.png">
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <h4>① 압도적인 가성비 & SET 구성!</h4>
+                        <p>고품질 플리스 <span class="strong-emphasis">집업 + 팬츠 풀세트</span>를 <span class="price-tag">59,000원</span> 파격가에!</p>
+                        <p>단품 활용도 높은 2종을 한 번에 제공하여 <span class="highlight">고객 체감 혜택 극대화!</span></p>
+                        <div class="price-comparison-table mt-4 mb-4">
+                            <table class="w-full border-collapse overflow-hidden rounded-lg" style="box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                                <thead>
+                                    <tr style="background-color: var(--primary);">
+                                        <th class="py-3 px-4 text-left text-white font-bold border border-secondary-light/20" style="width: 40%;">상품</th>
+                                        <th class="py-3 px-4 text-center text-white font-bold border border-secondary-light/20" style="width: 30%;">정상가격</th>
+                                        <th class="py-3 px-4 text-center text-white font-bold border border-secondary-light/20" style="width: 30%;">세트 할인가</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background-color: white;">
+                                        <td class="py-3 px-4 border border-secondary-light/20 font-medium">플리스 집업 상의</td>
+                                        <td class="py-3 px-4 border border-secondary-light/20 text-center">49,000원</td>
+                                        <td class="py-3 px-4 border border-secondary-light/20 text-center" rowspan="2" style="background-color: var(--accent-light);"><span class="font-bold text-lg" style="color: var(--accent);">59,000원</span>
+                                            <div class="text-sm mt-1" style="color: var(--primary);">(SET 구성)</div>
+                                        </td>
+                                    </tr>
+                                    <tr style="background-color: white;">
+                                        <td class="py-3 px-4 border border-secondary-light/20 font-medium">플리스 조거 팬츠</td>
+                                        <td class="py-3 px-4 border border-secondary-light/20 text-center">39,000원</td>
+                                    </tr>
+                                    <tr style="background-color: var(--background);">
+                                        <td class="py-3 px-4 border border-secondary-light/20 font-bold">개별 구매 시 합계</td>
+                                        <td class="py-3 px-4 border border-secondary-light/20 text-center font-bold">88,000원</td>
+                                        <td class="py-3 px-4 border border-secondary-light/20 text-center font-bold" style="color: var(--accent);">59,000원</td>
+                                    </tr>
+                                    <tr style="background-color: var(--primary-light); color: white;">
+                                        <td class="py-4 px-4 border border-secondary-light/20 font-bold text-lg" colspan="3" style="text-align: center;">
+                                            <div>세트 구매 시 <span style="font-size: 1.25rem;">29,000원 절약!</span>
+                                            </div>
+                                            <div class="mt-1">(약 <span class="font-bold">33%</span> 할인 효과)
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <h4>② 전 국민 공감! "추운데 뭐 입지?" 고민 해결!</h4>
+                        <p>겨울철 옷 고르기 시간 단축! 쉽고 빠른 스타일링.</p>
+                        <p>입는 즉시 느껴지는 포근함과 부드러움 (<span class="highlight">소재감 시연 필수</span> - 쇼호스트 착용 / 원단 클로즈업)</p>
+                        <div class="image-placeholder mt-3">소재감
+                            <img src="https://ofactory.cafe24.com/company/offer/img/ezgif-7-0fe43d667b-ezgif.com-rotate.gif">
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <h4>③ 트렌디함과 실용성 동시 충족!</h4>
+                        <ul class="section-list">
+                            <li>세련된 <strong class="highlight">오버핏</strong>으로 체형 커버 & 스타일리시함 강조
+                            </li>
+                            <li>집콕, 외출, 운동 등 <strong class="highlight">TPO 경계 없는 전천후 활용성</strong> (다양한 활용 장면 제시)
+                            </li>
+                            <li>남녀 공용 디자인 & 폭넓은 사이즈로 <strong class="highlight">커플룩, 패밀리룩 제안</strong> → 객단가 상승 유도
+                            </li>
+                        </ul>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                            <div class="image-placeholder">
+                                <p>패딩 이너</p>
+                                <img src="http://ofactory.cafe24.com/company/offer/img/use5.png">
+                                <p></p>
+                            </div>
+                            <div class="image-placeholder">여행
+                                <img src="http://ofactory.cafe24.com/company/offer/img/use1.png">
+                            </div>
+                            <div class="image-placeholder">커플룩
+                                <img src="http://ofactory.cafe24.com/company/offer/img/use4.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <h4>④ 디테일에서 오는 만족감 (2025년형 업그레이드!)</h4>
+                        <p>작년 고객 피드백 반영! <span class="highlight">더욱 편안하고 세련되게 개선된 디테일!</span></p>
+                        <h5 class="font-semibold mt-4 mb-2">상의 (집업):</h5>
+                        <ul class="list-disc pl-5 text-sm">
+                            <li>남성제품은 하프집업에서 풀집업으로 변경</li>
+                            <li>지퍼 조절로 다양한 무드 연출 (하이넥&harr;오픈넥)</li>
+                            <li>실용적인 양쪽 포켓 (깊이/각도 등 개선점 명시)</li>
+                            <li>핏 조절 가능한 밑단 스트링/지퍼 디테일</li>
+                        </ul>
+                        <div class="snap-zipper-highlight">
+                            <h5>⭐ 남성용 특별 디테일: 원터치 스냅 지퍼!</h5>
+                            <p>남성용 집업에는 특별히 <strong class="emphasis">혁신적인 '스냅 지퍼'</strong>를 적용했습니다. 한 손으로도 쉽고 빠르게, '똑딱'하고 잠그고 열 수 있어 비교 불가능한 편리함을 선사합니다. (방송 중 시연 시 고객 반응 폭발 예상!)</p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                                <div class="image-placeholder">집업 디테일 컷
+                                    <img src="http://ofactory.cafe24.com/company/offer/img/zipper.jpg" width="400">
+                                </div>
+                                <div class="image-placeholder">
+                                    <p></p>
+                                    지퍼 시연영상
+
+                                    <img src="https://ofactory.cafe24.com/company/offer/img/ezgif.com-animated-gif-maker.gif" width="400">
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="font-semibold mt-4 mb-2">하의 (조거 팬츠):</h5>
+                        <ul class="list-disc pl-5 text-sm">
+                            <li>안정적인 허리 밴딩 (들뜸/조임 최소화 - 개선점 명시)</li>
+                            <li>사이즈 조절 스트링 (내 몸에 꼭 맞게)</li>
+                            <li>편안한 활동성을 보장하는 조거 핏</li>
+                        </ul>
+                        <div class="image-placeholder mt-3">조거팬츠 디테일 컷
+                            <div>
+                                <img src="https://ofactory.cafe24.com/company/offer/img/menspants.png" width="400" class="">
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="key-point">
+                        <h4>⑤ 관리의 편리성 (이지케어!)</h4>
+                        <p><strong class="strong-emphasis">기계 세탁 가능!</strong> 바쁜 현대 고객들에게 매력적인 소구 포인트! (유지 관리 용이성 강조)</p>
+                        <div class="image-placeholder mt-3">
+                            <img width="400" class="" src="https://ofactory.cafe24.com/company/offer/img/machinewash.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2>3. 타겟 고객 분석 <span class="badge">Target Audience</span></h2>
+                </div>
+                <div class="card-body">
+                    <ul class="section-list">
+                        <li>
+                            <strong>메인 타겟 (30-50대 여성/남성):</strong> 실용성, 편안함, <span class="highlight">가성비</span> 중시 / 홈쇼핑 주 이용 고객층
+                        </li>
+                        <li>
+                            <strong>확장 타겟 (20대 / 60대 이상):</strong> 트렌디한 디자인 선호 (20대) / 편안한 소재 및 이지케어 선호 (60대+)
+                        </li>
+                        <li>
+                            <strong>구매 유인 요소:</strong> 시즌성(<span class="highlight">겨울 필수템</span>), 편리성(<span class="highlight">셋업 구성</span>), 가성비(<span class="highlight">합리적 가격</span>), 활용도(<span class="highlight">다양한 TPO</span>), <span class="emphasis">2024년 검증된 만족도</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2>4. 상품 상세 정보 <span class="badge">Product Details</span></h2>
+                </div>
+                <div class="card-body">
+                    <table class="info-table">
+                        <tbody>
+                            <tr>
+                                <th>소 재</th>
+                                <td>정확한 소재 명칭 및 특징 : <span class="highlight">보온성 높은 양면 플리스 100%</span>)</td>
+                            </tr>
+                            <tr>
+                                <th>색 상</th>
+                                <td><p><span class="highlight">블랙 / 그레이 / 카키 / 크림 / 레드 - 총 5종 </span></p><span class="highlight">(남성 블랙+그레이+카키) 여성은 블랙+크림+레드)</span></td>
+                            </tr>
+                            <tr>
+                                <th>사이즈 스펙</th>
+                                <td><strong>여성:</strong> 90(S) / 95(M) / 100(L) / 105(XL)<br><strong>남성:</strong> 95(M) / 100(L) / 105(XL) / 110(XXL)<br><span class="text-sm text-gray-500">(*상세 사이즈 실측표 별도 첨부)</span>
+                                    <div class="image-placeholder mt-2">
+                                        <img width="400" class="" src="https://ofactory.cafe24.com/company/offer/img/size.jpg">상세 사이즈표
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>제조/원산지</th>
+                                <td>주식회사마크트레이드 / 미얀마</td>
+                            </tr>
+                            <tr>
+                                <th>세탁 방법</th>
+                                <td><span class="highlight">기계 세탁 가능</span> (세탁망 사용 권장 / 건조기 사용 금지 등 주의사항 명시)</td>
+                            </tr>
+                            <tr>
+                                <th>2024 모델 대비 변경/개선 사항 (요약)</th>
+                                <td>좀더 부드러운 소재로 변경, 남성용 스냅 지퍼 적용, 남성 바지 길이 연장</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2>5. 홈쇼핑 방송 제안 강점 <span class="badge">Why This Product?</span></h2>
+                </div>
+                <div class="card-body">
+                    <ul class="icon-list">
+                        <li>
+                            <span class="icon">🔥</span>
+                            <strong class="strong-emphasis">확실한 판매 데이터:</strong> 2024년 실적으로 증명된 성공 가능성 높음.&nbsp;<span class="highlight">의사결정 리스크 최소화!</span>
+                        </li>
+                        <li><span class="icon">📉</span><strong class="emphasis">낮은 반품률 기대:</strong> 이미 고객 만족도가 검증되어 반품 및 고객 불만 리스크 최소화.
+                        </li>
+                        <li><span class="icon">💬</span><strong class="emphasis">강력한 스토리텔링:</strong> "고객 극찬", "앵콜 요청 쇄도", "업그레이드 귀환", "혁신 스냅 지퍼(남성)" 등 방송 활용 스토리 풍부.
+                        </li>
+                        <li><span class="icon">🔄</span><strong class="emphasis">충성 고객 확보 및 재구매 유도:</strong> 기존 만족 고객 재구매 및 신규 고객 높은 기대치 충족.
+                        </li>
+                        <li><span class="icon">📺</span><strong class="emphasis">방송 효율성 극대화:</strong> 시각/촉각적 소구 용이, 쇼호스트 시연(특히 스냅 지퍼!) 및 고객 공감대 형성에 최적화.
+                        </li>
+                        <li><span class="icon">📦</span><strong class="emphasis">재고 관리 용이성:</strong> 베이직 아이템 특성상 시즌 간 판매 및 재고 운영 부담 상대적 감소.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h2>6. 요청 사항 및 첨부 자료 <span class="badge">Requests & Attachments</span></h2>
+                </div>
+                <div class="card-body">
+                    <ul class="section-list">
+                        <li>샘플 제공 가능 (MD 검토용)</li>
+                        <li>상세 이미지 및 사이즈 스펙 자료 별도 제공</li>
+                        <li>
+                            <span class="highlight">⭐ 2024년 판매 성과 데이터 요약본 (별도 첨부)</span>
+                        </li>
+                        <li>
+                            <span class="highlight">⭐ 2024년 실구매 고객 우수 리뷰 모음 (별도 첨부)</span>
+                        </li>
+                    </ul>
+                    <p class="mt-6 font-semibold text-center" style="color: var(--primary);">성공적인 홈쇼핑 방송을 위해 긍정적인 검토 부탁드립니다.</p>
+                </div>
+            </div>
+            <footer class="text-center py-8 text-sm" style="color: var(--secondary);">
+                <p>&copy; 2025 Marktrade. 모든 권리 보유.</p>
+                <p class="mt-2">문의: orangefactory@kakao.com | 010-4464-0345 (김경수 대표) / 010-5308-8172 (벤더 지앤원 박지용 대표)</p>
+            </footer>
+        </div>
+    </body>
+</html>
