@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>모두스비벤디(Modus Vivendi) 브랜드 소개 - 오랜 전통과 현대 감각의 조화</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <style>/* Pretendard 웹폰트 로드 */@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css'); /* 색상 팔레트 제한 (4가지) - 남성적인 무게감 */:root { --primary: #1E3A5F;  /* 딥 네이비 */ --secondary: #3B3B3B;  /* 차콜 그레이 */ --neutral: #F3F2E9;  /* 크림색 */ --accent: #D4B863;  /* 골드 액센트 */ } body { font-family: 'Pretendard', sans-serif; color: var(--secondary); background-color: var(--neutral); padding-top: 64px; /* 고정 헤더 높이만큼 패딩 추가 */ } .text-primary { color: var(--primary); } .text-secondary { color: var(--secondary); } .text-accent { color: var(--accent); } .bg-primary { background-color: var(--primary); } .bg-secondary { background-color: var(--secondary); } .bg-neutral { background-color: var(--neutral); } .bg-accent { background-color: var(--accent); } .border-primary { border-color: var(--primary); } .border-accent { border-color: var(--accent); } /* 애니메이션 효과 */@keyframes fadeIn { 0% {  opacity: 0;  transform: translateY(10px); }  100% {  opacity: 1;  transform: translateY(0); } } .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; } /* 스크롤 애니메이션 */.scroll-section { opacity: 0; transform: translateY(20px); transition: all 0.7s ease-out; } .scroll-section.visible { opacity: 1; transform: translateY(0); } /* 타임라인 마커 */.timeline-marker { position: absolute; left: -44px; top: 0.25rem; width: 1.25rem; height: 1.25rem; background-color: var(--accent); border-radius: 9999px; border-width: 4px; border-color: var(--neutral); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        /* 추가된 스타일: 헤더 관련 */
+        .header-bg-scrolled { background-color: var(--primary) !important; color: var(--neutral) !important; }
+        .header-bg-scrolled a { color: var(--neutral) !important; }
+        .header-bg-scrolled #menu-icon svg { stroke: var(--neutral) !important; }
+
+        #mobile-menu {
+            background-color: var(--primary);
+        }
+
+        /* 일관된 섹션 패딩 */
+        .section-padding {
+            padding: 4rem 1rem; /* 기본 패딩 */
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding: 6rem 2rem; /* md 이상 화면 패딩 */
+            }
+        }
+        </style>
+        <!--tailwind_theme/tailwind.css 링크 제거 (CDN 사용으로 대체) -->
+        <!-- <link href="tailwind_theme/tailwind.css" rel="stylesheet" type="text/css"> -->
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent text-[var(--primary)]">
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center"><a href="#" class="text-xl font-bold">Modus Vivendi</a>
+                <nav class="hidden md:flex space-x-6"><a href="#concept" class="hover:text-[var(--accent)] transition-colors duration-200">브랜드 컨셉</a><a href="#why-modusvivendi" class="hover:text-[var(--accent)] transition-colors duration-200">Modus Vivendi 가치</a><a href="#history" class="hover:text-[var(--accent)] transition-colors duration-200">브랜드 역사</a><a href="#products" class="hover:text-[var(--accent)] transition-colors duration-200">제품 라인업</a><a href="#future" class="hover:text-[var(--accent)] transition-colors duration-200">미래 방향</a><a href="#contact" class="hover:text-[var(--accent)] transition-colors duration-200">문의하기</a>
+                </nav>
+                <button id="menu-icon" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6 stroke-current text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 text-[var(--neutral)] shadow-lg">
+                <nav class="flex flex-col p-4 space-y-2"><a href="#concept" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">브랜드 컨셉</a><a href="#why-modusvivendi" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">Modus Vivendi 가치</a><a href="#history" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">브랜드 역사</a><a href="#products" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">제품 라인업</a><a href="#future" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">미래 방향</a><a href="#contact" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">문의하기</a>
+                </nav>
+            </div>
+        </header>
+        <!-- 스크롤 애니메이션 및 헤더 스크롤 효과를 위한 JavaScript -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 기존 스크롤 애니메이션 Observer
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {threshold: 0.1});
+
+            document.querySelectorAll('.scroll-section').forEach(section => {
+                scrollObserver.observe(section);
+            });
+
+            // 헤더 스크롤 효과
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) { // 50px 이상 스크롤되면
+                    header.classList.add('header-bg-scrolled', 'shadow-md');
+                    header.classList.remove('bg-transparent');
+                } else {
+                    header.classList.remove('header-bg-scrolled', 'shadow-md');
+                    header.classList.add('bg-transparent');
+                }
+            });
+
+            // 모바일 메뉴 토글
+            const menuIcon = document.getElementById('menu-icon');
+            const mobileMenu = document.getElementById('mobile-menu');
+            menuIcon.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 모바일 메뉴 링크 클릭 시 메뉴 닫기
+            const mobileNavLinks = mobileMenu.querySelectorAll('a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+        </script>
+        <div class="container mx-auto p-6 md:p-10 lg:p-16">
+            <!-- Hero Section -->
+            <section class="relative overflow-hidden rounded-xl bg-primary shadow-xl mb-16 section-padding">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="flex flex-col justify-center p-8 md:p-12 lg:p-16">
+                        <div class="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent ring-1 ring-inset ring-accent/20 mb-6">
+                            남성을 위한 라이프스타일 웨어
+</div>
+                        <h1 class="font-extrabold mb-4 text-5xl text-gray-50 text-neutral tracking-tight md:text-6xl">Modus Vivendi</h1>
+                        <p class="font-semibold mb-2 text-gray-50 text-neutral/80 text-xl md:text-2xl">오랜 전통과 현대 감각의 조화</p>
+                        <p class="mb-8 mt-3 text-gray-50 text-lg text-neutral/60">당신의 일상을 위한 품격 있는 남성 라이프스타일 웨어</p>
+                        <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                            <a href="#concept" class="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-medium text-primary shadow-sm hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2">
+                            브랜드 컨셉 </a>
+                            <a href="#products" class="bg-neutral/10 border border-neutral/20 font-medium inline-flex items-center justify-center px-6 py-3 rounded-md shadow-sm text-base text-gray-50 text-neutral focus:outline-none focus:ring-2 focus:ring-neutral focus:ring-offset-2 hover:bg-neutral/20">
+                            제품 라인업 </a>
+                        </div>
+                    </div>
+                    <div class="hidden md:block p-8">
+                        <img src="https://ofactory.cafe24.com/company/offer/img/main.jpeg" alt="Modus Vivendi Brand Image" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                    </div>
+                </div>
+            </section>
+            <!-- Brand Concept Section -->
+            <section id="concept" class="scroll-section mb-12 bg-white p-8 rounded-lg shadow-lg section-padding">
+                <h2 class="text-3xl font-bold text-primary mb-6 border-l-4 border-accent pl-4">Brand Concept: 전통과 현대의 공존</h2>
+                <div class="space-y-5 text-lg leading-relaxed">
+                    <p><strong class="font-semibold text-primary">Origin & Meaning:</strong> 브랜드명 'Modus Vivendi'는 라틴어로 <span class="font-semibold">'생활 방식' 또는 '존재 방식'</span>을 의미합니다. 이는 현대인의 라이프스타일에 자연스럽게 어울리는 옷을 제안하고자 하는 브랜드의 의지를 담고 있습니다. ㈜신원 시절부터 쌓아온 남성복에 대한 깊이 있는 경험과 노하우(<span class="font-semibold">전통</span>)를 바탕으로, 시대의 흐름에 맞는 디자인과 트렌드(<span class="font-semibold">현대 감각</span>)를 조화롭게 결합합니다.</p>
+                    <p><strong class="font-semibold text-primary">Philosophy:</strong> 우리는 단순히 유행을 따르기보다, 고유한 철학과 스토리를 담은 옷을 만들고자 합니다. '원단 디자인이 좋은 옷'이라는 과거의 명성처럼, <span class="font-semibold">우수한 품질과 소재</span>에 대한 고집을 지키며, 동시에 현대적인 라이프스타일에 부합하는 <span class="font-semibold">실용성과 세련된 스타일</span>을 추구합니다.</p>
+                    <p><strong class="font-semibold text-primary">Value Proposition:</strong> 2007년 ㈜오렌지팩토리에 합류하며, 효율적인 SPA 시스템을 통해 <span class="font-semibold">합리적인 가격에 높은 가치</span>를 제공하는 것을 중요한 목표로 삼고 있습니다. 좋은 품질의 제품을 더 많은 고객이 경험할 수 있도록, 생산부터 유통까지의 과정을 최적화하여 가격 경쟁력을 확보하고 있습니다.</p>
+                </div>
+            </section>
+            <!-- Why Modus Vivendi Section -->
+            <section id="why-modusvivendi" class="scroll-section mb-16 bg-primary/5 p-8 rounded-lg shadow-md section-padding">
+                <h2 class="text-3xl font-bold text-primary mb-8 text-center">모두스비벤디만의 가치: Why Choose Modus Vivendi?</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-primary mb-3 flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        헤리티지와 신뢰 </h3>
+                        <p class="text-secondary leading-relaxed">1990년대부터 이어져 온 브랜드 역사와 ㈜신원 시절 구축된 높은 인지도는 브랜드 신뢰도의 기반이 됩니다.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-primary mb-3 flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        합리적인 가치 </h3>
+                        <p class="text-secondary leading-relaxed">오렌지팩토리의 효율적인 SPA 시스템을 통해 고품질의 제품을 경쟁력 있는 합리적인 가격으로 제공합니다.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <h3 class="text-xl font-bold text-primary mb-3 flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                            </svg>
+                        다채로운 스타일 </h3>
+                        <p class="text-secondary leading-relaxed">아우터웨어, 셔츠, 니트, 정장 등 다양한 남성복 라인업을 갖춰 폭넓은 고객의 취향과 니즈를 만족시킵니다.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 md:col-span-1">
+                        <h3 class="text-xl font-bold text-primary mb-3 flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        현대적 라이프스타일 </h3>
+                        <p class="text-secondary leading-relaxed">일상에서 편안하면서도 자신감 있게 착용할 수 있도록 기능성과 스타일의 균형을 맞춘 디자인을 제안합니다.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 md:col-span-1">
+                        <h3 class="text-xl font-bold text-primary mb-3 flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        검증된 품질 </h3>
+                        <p class="text-secondary leading-relaxed">'원단 디자인 좋은 옷'이라는 명성에 걸맞게 소재 선택부터 생산까지 품질 관리에 노력을 기울입니다.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-300 md:col-span-1">
+                        <h3 class="text-xl font-bold text-primary mb-3 flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.539 1.118l-3.975-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.196-1.539-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.783-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                            </svg>
+                         빈티지 매력 </h3>
+                        <p class="text-secondary leading-relaxed">1990년대 인기를 끌었던 헤리티지는 빈티지 마켓에서도 꾸준한 관심을 받으며 브랜드 가치를 더합니다.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Brand History Section -->
+            <section id="history" class="scroll-section mb-16 section-padding">
+                <h2 class="text-3xl font-bold text-primary mb-8 border-l-4 border-accent pl-4">Brand History: 시간 속에 쌓아온 발자취</h2>
+                <div class="relative border-l-2 border-accent/30 pl-8 space-y-12">
+                    <div class="relative">
+                        <div class="timeline-marker"></div>
+                        <h3 class="text-2xl font-bold text-primary mb-3">1989년 이전: <span class="font-semibold">㈜신원, 브랜드의 시작</span></h3>
+                        <div class="bg-white p-6 rounded-lg shadow-md space-y-3 text-base leading-relaxed">
+                            <p>1973년 설립된 패션 전문 기업 <span class="font-semibold text-secondary">㈜신원</span>에서 남성복 라인으로 탄생.</p>
+                            <p>'원단 디자인이 좋은 옷'이라는 고급스러운 이미지를 바탕으로 남성복 시장 공략 시작.</p>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="timeline-marker"></div>
+                        <h3 class="text-2xl font-bold text-primary mb-3">1998년: <span class="font-semibold">시장 안착과 브랜드 확장</span></h3>
+                        <div class="bg-white p-6 rounded-lg shadow-md space-y-3 text-base leading-relaxed">
+                            <p>국내 남성복 시장 <span class="font-semibold text-secondary">5대 브랜드 아성 위협</span>, 확고한 입지 구축.</p>
+                            <p>브랜드 세분화 전략: 캐릭터 라인 <span class="font-semibold text-secondary">'모두스인터내셔널'</span>, 프라이데이 캐주얼 <span class="font-semibold text-secondary">'M.V SPORTS'</span>, 고급 정장 <span class="font-semibold text-secondary">'THE HONOUR'</span> 등 라인 확장.</p>
+                            <p>30대 초반 전문직 남성을 타겟으로 세련된 스타일 제안.</p>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="timeline-marker"></div>
+                        <h3 class="text-2xl font-bold text-primary mb-3">2007년: <span class="font-semibold">오렌지팩토리, 새로운 전환</span></h3>
+                        <div class="bg-white p-6 rounded-lg shadow-md space-y-3 text-base leading-relaxed">
+                            <p><span class="font-semibold text-secondary">오렌지팩토리</span>가 브랜드 인수, 새로운 성장 동력 확보.</p>
+                            <p>오렌지팩토리의 SPA(제조·유통 일괄형) 비즈니스 모델에 통합.</p>
+                            <p>합리적인 가격에 다양한 상품을 제공하는 가치 중심 전략으로 전환.</p>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="timeline-marker"></div>
+                        <h3 class="text-2xl font-bold text-primary mb-3">2007년 ~ 현재: <span class="font-semibold">SPA 브랜드로서의 성장</span></h3>
+                        <div class="bg-white p-6 rounded-lg shadow-md space-y-3 text-base leading-relaxed">
+                            <p>오렌지팩토리의 <span class="font-semibold text-secondary">전국적인 유통망</span>(약 70여 개 매장 및 온라인 스토어)을 통해 판매.</p>
+                            <p>폭넓은 연령대의 고객을 대상으로 합리적인 가격과 좋은 품질의 제품 제공에 주력.</p>
+                            <p>아우터, 셔츠, 니트 등 다양한 남성복 제품 지속 출시 및 개발 (예: 2024 F/W 에센셜 라인, 2025 S/S 썸머쿨 라인 등).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Products Section -->
+            <section id="products" class="scroll-section mb-12 bg-white p-8 rounded-lg shadow-lg section-padding">
+                <h2 class="text-3xl font-bold text-primary mb-6 border-l-4 border-accent pl-4">Product Lineup: 다양함으로 채우는 남성의 옷장</h2>
+                <p class="text-lg leading-relaxed mb-10 max-w-4xl">모두스비벤디는 남성의 다양한 라이프스타일을 아우르는 폭넓은 제품 라인업을 선보입니다. 실용성과 스타일을 겸비한 아이템들을 합리적인 가격으로 만나보세요.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://s3-ap-northeast-2.amazonaws.com/gmp01/12838/online/111776747/Z000/202502052356467.png" alt="아우터웨어" class="rounded-lg mb-4 w-full h-60 object-cover">
+                        <h3 class="text-xl font-bold text-primary mb-2">아우터웨어</h3>
+                        <p class="text-secondary text-sm">구스다운 울 재킷, 하프 코트, 양가죽 무스탕, 남자 코트, 패딩 점퍼 등 시즌별 다양한 스타일.</p>
+                    </div>
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://s3-ap-northeast-2.amazonaws.com/gmp01/12838/online/111776751/Z000/202502052357051.jpg" alt="셔츠" class="rounded-lg mb-4 w-full h-60 object-cover">
+                        <h3 class="text-xl font-bold text-primary mb-2">셔츠</h3>
+                        <p class="text-secondary text-sm">기본 슬림핏 스판 드레스 셔츠, 하운드투스, 캐주얼 셔츠 등 다양한 디자인과 색상.</p>
+                    </div>
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://s3-ap-northeast-2.amazonaws.com/gmp01/12838/online/111688654/Z000/202502050832151.png" alt="니트웨어" class="rounded-lg mb-4 w-full h-60 object-cover">
+                        <h3 class="text-xl font-bold text-primary mb-2">니트웨어</h3>
+                        <p class="text-secondary text-sm">터틀넥, 반집업, 가디건, 라운드넥, 니트 베스트 등 다양한 디자인과 소재.</p>
+                    </div>
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://s3-ap-northeast-2.amazonaws.com/gmp01/12838/online/111869123/Z000/202502070323235.jpg" alt="스웨트셔츠/하의" class="rounded-lg mb-4 w-full h-60 object-cover">
+                        <h3 class="text-xl font-bold text-primary mb-2">스웨트셔츠/하의</h3>
+                        <p class="text-secondary text-sm">캐주얼 스웨트셔츠, 맨투맨, 다양한 스타일의 팬츠.</p>
+                    </div>
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://s3-ap-northeast-2.amazonaws.com/gmp01/12838/online/111776746/Z000/202502052356441.png" alt="정장" class="rounded-lg mb-4 w-full h-60 object-cover">
+                        <h3 class="text-xl font-bold text-primary mb-2">정장</h3>
+                        <p class="text-secondary text-sm">남성 정장 블레이저 재킷, 춘추복 정장 세트 등 포멀 스타일.</p>
+                    </div>
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-accent mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-primary mb-2">More Styles</h3>
+                        <p class="text-secondary text-sm text-center">다양한 스타일을<br>확인해보세요.</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Future Direction Section -->
+            <section id="future" class="scroll-section mb-12 bg-primary/5 p-8 rounded-lg shadow-md section-padding">
+                <h2 class="text-3xl font-bold text-primary mb-6 border-l-4 border-accent pl-4">Future Direction: 진화하는 남성 라이프스타일 웨어</h2>
+                <p class="text-lg leading-relaxed mb-6">모두스비벤디는 브랜드의 근간인 <span class="font-semibold text-primary">전통적인 가치와 품질</span>에 대한 신념을 지키면서, 끊임없이 변화하는 <span class="font-semibold text-primary">현대 남성의 라이프스타일</span>에 발맞춰 진화하고자 합니다. 실용적이면서도 세련된 디자인, 합리적인 가격 정책을 통해 더 많은 고객에게 만족을 선사하는 것을 목표로 합니다. 최근 선보인 '홀로그래픽 라인'이나 '일루전/래커 라인'처럼, 새로운 컨셉과 디자인 시도를 통해 브랜드에 신선함을 불어넣고 <span class="font-semibold text-primary">지속 가능한 성장</span>을 추구할 것입니다.</p>
+                <div>
+                    <h4 class="text-xl font-semibold text-primary mb-3">Brand Image Keywords:</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#전통</span>
+                        <span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#현대</span>
+                        <span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#라이프스타일</span>
+                        <span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#남성복</span>
+                        <span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#헤리티지</span>
+                        <span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#가성비</span>
+                        <span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#SPA</span>
+                        <span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#품질</span>
+                        <span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#실용성</span>
+                        <span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#스타일</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Core Value Section -->
+            <section class="scroll-section mb-12 text-center bg-primary py-12 px-6 rounded-lg shadow-xl section-padding">
+                <h2 class="font-bold mb-4 text-3xl text-gray-50 text-neutral md:text-4xl">Our Core Value</h2>
+                <div class="w-16 h-1 bg-accent mx-auto mb-8"></div>
+                <p class="italic leading-relaxed max-w-3xl mx-auto text-gray-50 text-neutral/90 text-xl md:text-2xl">&quot;모두스비벤디는 시간의 깊이가 담긴 <span class="font-semibold text-accent underline">전통</span>과<br>끊임없이 변화하는 <span class="font-semibold text-accent underline">현대적 감각</span>의 조화를 추구합니다.<br>좋은 <span class="font-semibold text-accent underline">소재</span>와 세심한 <span class="font-semibold text-accent underline">디자인</span>, 그리고 <span class="font-semibold text-accent underline">합리적인 가치</span>를 통해<br>고객의 일상에 품격을 더하는 것을 핵심 가치로 삼습니다.&quot;</p>
+            </section>
+            <!-- Contact Section -->
+            <footer id="contact" class="text-center border-t border-accent/20 pt-10 mt-16 section-padding">
+                <h2 class="text-2xl font-semibold text-primary mb-4">Contact Us</h2>
+                <p class="text-secondary text-lg mb-1">김경수 영업이사</p>
+                <p class="text-secondary text-lg"> <a href="tel:010-8274-4687" class="hover:text-accent transition-colors duration-200">Tel: 010-4464-0345</a> | <a href="mailto:ytyong@hanmail.net" class="hover:text-accent transition-colors duration-200">Mail: orangefactory@kakao.com</a> </p>
+                <p class="mt-8 text-sm text-secondary/70">© Modus Vivendi Brand Information. All rights reserved.</p>
+            </footer>
+        </div>
+    </body>
+</html>
