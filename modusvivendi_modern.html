@@ -31,15 +31,8 @@
     <body>
         <!-- Header Section -->
         <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent text-[var(--primary)]">
-            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-                <a href="#" class="text-xl font-bold">Modus Vivendi</a>
-                <nav class="hidden md:flex space-x-6">
-                    <a href="#concept" class="hover:text-[var(--accent)] transition-colors duration-200">브랜드 컨셉</a>
-                    <a href="#why-modusvivendi" class="hover:text-[var(--accent)] transition-colors duration-200">Modus Vivendi 가치</a>
-                    <a href="#history" class="hover:text-[var(--accent)] transition-colors duration-200">브랜드 역사</a>
-                    <a href="#products" class="hover:text-[var(--accent)] transition-colors duration-200">제품 라인업</a>
-                    <a href="#future" class="hover:text-[var(--accent)] transition-colors duration-200">미래 방향</a>
-                    <a href="#contact" class="hover:text-[var(--accent)] transition-colors duration-200">문의하기</a>
+            <div class="container mx-auto px-4 py-4 flex justify-between items-center"><a href="#" class="text-xl font-bold">Modus Vivendi</a>
+                <nav class="hidden md:flex space-x-6"><a href="#concept" class="hover:text-[var(--accent)] transition-colors duration-200">브랜드 컨셉</a><a href="#why-modusvivendi" class="hover:text-[var(--accent)] transition-colors duration-200">Modus Vivendi 가치</a><a href="#history" class="hover:text-[var(--accent)] transition-colors duration-200">브랜드 역사</a><a href="#products" class="hover:text-[var(--accent)] transition-colors duration-200">제품 라인업</a><a href="#future" class="hover:text-[var(--accent)] transition-colors duration-200">미래 방향</a><a href="#contact" class="hover:text-[var(--accent)] transition-colors duration-200">문의하기</a>
                 </nav>
                 <button id="menu-icon" class="md:hidden focus:outline-none">
                     <svg class="w-6 h-6 stroke-current text-[var(--primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -49,17 +42,10 @@
             </div>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 text-[var(--neutral)] shadow-lg">
-                <nav class="flex flex-col p-4 space-y-2">
-                    <a href="#concept" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">브랜드 컨셉</a>
-                    <a href="#why-modusvivendi" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">Modus Vivendi 가치</a>
-                    <a href="#history" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">브랜드 역사</a>
-                    <a href="#products" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">제품 라인업</a>
-                    <a href="#future" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">미래 방향</a>
-                    <a href="#contact" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">문의하기</a>
+                <nav class="flex flex-col p-4 space-y-2"><a href="#concept" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">브랜드 컨셉</a><a href="#why-modusvivendi" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">Modus Vivendi 가치</a><a href="#history" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">브랜드 역사</a><a href="#products" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">제품 라인업</a><a href="#future" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">미래 방향</a><a href="#contact" class="block px-4 py-2 rounded hover:bg-[var(--accent)] hover:text-[var(--primary)] transition-colors duration-200">문의하기</a>
                 </nav>
             </div>
         </header>
-
         <!-- 스크롤 애니메이션 및 헤더 스크롤 효과를 위한 JavaScript -->
         <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -107,18 +93,23 @@
         <div class="container mx-auto p-6 md:p-10 lg:p-16">
             <!-- Hero Section -->
             <section class="relative overflow-hidden rounded-xl bg-primary shadow-xl mb-16 section-padding">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-                    <div class="col-end-3 col-start-1 flex flex-col justify-center p-8 row-end-2 row-start-1 md:p-12 lg:p-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="flex flex-col justify-center p-8 md:p-12 lg:p-16">
                         <div class="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-sm font-medium text-accent ring-1 ring-inset ring-accent/20 mb-6">
                             남성을 위한 라이프스타일 웨어
 </div>
                         <h1 class="font-extrabold mb-4 text-5xl text-gray-50 text-neutral tracking-tight md:text-6xl">Modus Vivendi</h1>
                         <p class="font-semibold mb-2 text-gray-50 text-neutral/80 text-xl md:text-2xl">오랜 전통과 현대 감각의 조화</p>
                         <p class="mb-8 mt-3 text-gray-50 text-lg text-neutral/60">당신의 일상을 위한 품격 있는 남성 라이프스타일 웨어</p>
-                        <div class="flex flex-col sm:flex-row gap-4 mt-2"><a href="#concept" class="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-medium text-primary shadow-sm hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2">
-                            브랜드 컨셉 </a><a href="#products" class="bg-neutral/10 border border-neutral/20 font-medium inline-flex items-center justify-center px-6 py-3 rounded-md shadow-sm text-base text-gray-50 text-neutral focus:outline-none focus:ring-2 focus:ring-neutral focus:ring-offset-2 hover:bg-neutral/20">
+                        <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                            <a href="#concept" class="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-base font-medium text-primary shadow-sm hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2">
+                            브랜드 컨셉 </a>
+                            <a href="#products" class="bg-neutral/10 border border-neutral/20 font-medium inline-flex items-center justify-center px-6 py-3 rounded-md shadow-sm text-base text-gray-50 text-neutral focus:outline-none focus:ring-2 focus:ring-neutral focus:ring-offset-2 hover:bg-neutral/20">
                             제품 라인업 </a>
                         </div>
+                    </div>
+                    <div class="hidden md:block p-8">
+                        <img src="https://ofactory.cafe24.com/company/offer/img/main.jpeg" alt="Modus Vivendi Brand Image" class="rounded-lg shadow-xl w-full h-auto object-cover">
                     </div>
                 </div>
             </section>
@@ -223,44 +214,40 @@
             <!-- Products Section -->
             <section id="products" class="scroll-section mb-12 bg-white p-8 rounded-lg shadow-lg section-padding">
                 <h2 class="text-3xl font-bold text-primary mb-6 border-l-4 border-accent pl-4">Product Lineup: 다양함으로 채우는 남성의 옷장</h2>
-                <p class="text-lg leading-relaxed mb-6">모두스비벤디는 남성의 다양한 라이프스타일을 아우르는 폭넓은 제품 라인업을 선보입니다. 실용성과 스타일을 겸비한 아이템들을 합리적인 가격으로 만나보세요.</p>
-                <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-accent/20">
-                        <thead class="bg-primary/5">
-                            <tr>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">제품 라인</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">주요 특징</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-primary uppercase tracking-wider">주요 소재</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-accent/20">
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary">아우터웨어</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary">구스다운 울 재킷, 하프 코트, 양가죽 무스탕, 남자 코트, 패딩 점퍼 등 시즌별 다양한 스타일</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary">울, 구스다운, 양가죽, 나일론, 폴리에스터 등</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary">셔츠</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary">기본 슬림핏 스판 드레스 셔츠 (다양한 색상), 하운드투스, 캐주얼 셔츠 등</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary">스판 혼방, 면, 폴리에스터 혼방 등</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary">니트웨어</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary">터틀넥, 반집업, 가디건, 라운드넥, 니트 베스트 등 다양한 디자인과 소재</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary">울 혼방, 면, 아크릴, 캐시미어 혼방 등</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary">스웨트셔츠/하의</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary">캐주얼 스웨트셔츠, 맨투맨, 다양한 스타일의 팬츠</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary">면 혼방, 폴리에스터 등</td>
-                            </tr>
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-primary">정장</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary">남성 정장 블레이저 재킷, 춘추복 정장 세트 등 포멀 스타일</td>
-                                <td class="px-6 py-4 whitespace-nowrap text-sm text-secondary">울 혼방, 폴리에스터, 레이온 등</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <p class="text-lg leading-relaxed mb-10 max-w-4xl">모두스비벤디는 남성의 다양한 라이프스타일을 아우르는 폭넓은 제품 라인업을 선보입니다. 실용성과 스타일을 겸비한 아이템들을 합리적인 가격으로 만나보세요.</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-10">
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://s3-ap-northeast-2.amazonaws.com/gmp01/12838/online/111776747/Z000/202502052356467.png" alt="아우터웨어" class="rounded-lg mb-4 w-full h-60 object-cover">
+                        <h3 class="text-xl font-bold text-primary mb-2">아우터웨어</h3>
+                        <p class="text-secondary text-sm">구스다운 울 재킷, 하프 코트, 양가죽 무스탕, 남자 코트, 패딩 점퍼 등 시즌별 다양한 스타일.</p>
+                    </div>
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://s3-ap-northeast-2.amazonaws.com/gmp01/12838/online/111776751/Z000/202502052357051.jpg" alt="셔츠" class="rounded-lg mb-4 w-full h-60 object-cover">
+                        <h3 class="text-xl font-bold text-primary mb-2">셔츠</h3>
+                        <p class="text-secondary text-sm">기본 슬림핏 스판 드레스 셔츠, 하운드투스, 캐주얼 셔츠 등 다양한 디자인과 색상.</p>
+                    </div>
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://s3-ap-northeast-2.amazonaws.com/gmp01/12838/online/111688654/Z000/202502050832151.png" alt="니트웨어" class="rounded-lg mb-4 w-full h-60 object-cover">
+                        <h3 class="text-xl font-bold text-primary mb-2">니트웨어</h3>
+                        <p class="text-secondary text-sm">터틀넥, 반집업, 가디건, 라운드넥, 니트 베스트 등 다양한 디자인과 소재.</p>
+                    </div>
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://s3-ap-northeast-2.amazonaws.com/gmp01/12838/online/111869123/Z000/202502070323235.jpg" alt="스웨트셔츠/하의" class="rounded-lg mb-4 w-full h-60 object-cover">
+                        <h3 class="text-xl font-bold text-primary mb-2">스웨트셔츠/하의</h3>
+                        <p class="text-secondary text-sm">캐주얼 스웨트셔츠, 맨투맨, 다양한 스타일의 팬츠.</p>
+                    </div>
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                        <img src="https://s3-ap-northeast-2.amazonaws.com/gmp01/12838/online/111776746/Z000/202502052356441.png" alt="정장" class="rounded-lg mb-4 w-full h-60 object-cover">
+                        <h3 class="text-xl font-bold text-primary mb-2">정장</h3>
+                        <p class="text-secondary text-sm">남성 정장 블레이저 재킷, 춘추복 정장 세트 등 포멀 스타일.</p>
+                    </div>
+                    <div class="bg-neutral/50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-accent mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                        </svg>
+                        <h3 class="text-xl font-bold text-primary mb-2">More Styles</h3>
+                        <p class="text-secondary text-sm text-center">다양한 스타일을<br>확인해보세요.</p>
+                    </div>
                 </div>
             </section>
             <!-- Future Direction Section -->
@@ -269,7 +256,17 @@
                 <p class="text-lg leading-relaxed mb-6">모두스비벤디는 브랜드의 근간인 <span class="font-semibold text-primary">전통적인 가치와 품질</span>에 대한 신념을 지키면서, 끊임없이 변화하는 <span class="font-semibold text-primary">현대 남성의 라이프스타일</span>에 발맞춰 진화하고자 합니다. 실용적이면서도 세련된 디자인, 합리적인 가격 정책을 통해 더 많은 고객에게 만족을 선사하는 것을 목표로 합니다. 최근 선보인 '홀로그래픽 라인'이나 '일루전/래커 라인'처럼, 새로운 컨셉과 디자인 시도를 통해 브랜드에 신선함을 불어넣고 <span class="font-semibold text-primary">지속 가능한 성장</span>을 추구할 것입니다.</p>
                 <div>
                     <h4 class="text-xl font-semibold text-primary mb-3">Brand Image Keywords:</h4>
-                    <div class="flex flex-wrap gap-2"><span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#전통</span><span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#현대</span><span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#라이프스타일</span><span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#남성복</span><span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#헤리티지</span><span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#가성비</span><span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#SPA</span><span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#품질</span><span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#실용성</span><span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#스타일</span>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#전통</span>
+                        <span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#현대</span>
+                        <span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#라이프스타일</span>
+                        <span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#남성복</span>
+                        <span class="bg-accent/20 text-primary text-sm font-medium px-3 py-1 rounded-full">#헤리티지</span>
+                        <span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#가성비</span>
+                        <span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#SPA</span>
+                        <span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#품질</span>
+                        <span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#실용성</span>
+                        <span class="bg-primary/10 text-secondary text-sm font-medium px-3 py-1 rounded-full">#스타일</span>
                     </div>
                 </div>
             </section>
@@ -288,4 +285,4 @@
             </footer>
         </div>
     </body>
-</html> 
+</html>
